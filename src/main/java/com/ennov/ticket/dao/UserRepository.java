@@ -6,12 +6,14 @@
 package com.ennov.ticket.dao;
 
 import com.ennov.ticket.Entity.User;
+import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
  *
  * @author LALANDA
  */
-public interface UserRepository extends JpaRepository<User, Integer>{
-    
+public interface UserRepository extends JpaRepository<User, Integer> {
+
+    Optional<User> findByEmail(String email);
 }

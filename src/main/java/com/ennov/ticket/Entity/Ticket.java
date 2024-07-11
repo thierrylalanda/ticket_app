@@ -13,26 +13,25 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
 
 /**
  *
  * @author LALANDA
  */
+@Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
-@Entity
 public class Ticket {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
+    
     @Column(length = 50, name = "title")
     private String title;
     @Column(length = 150, name = "description")
